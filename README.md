@@ -13,7 +13,9 @@
 ## Overview
 
 ### Leaflet.TimeDimension
-This example shows how to integrate a third-party library that extends Leaflet when it is exposed as the "L" global variable.
+Demonstrates how to use Leaflet.TimeDimension with the ngx-leaflet library.
+Leaflet.TimeDimension extends the "L" global variable.
+So, this example shows how to configure @angular/cli to make Leaflet and the Leaflet.TimeDimension libraries available globaly.
 
 
 ## Usage

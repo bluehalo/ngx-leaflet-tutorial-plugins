@@ -1,27 +1,28 @@
-# NgxLeafletTimedimension
+# @asymmetrik/ngx-leaflet-tutorial-3rd-party-libs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+> Collection of ngx-leaflet tutorials focused on 3rd party library integration
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Table of Contents
+- [Overview](#overview)
+- [Usage](#usage)
+- [License](#license)
+- [Credits](#credits)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Overview
 
-## Build
+### Leaflet.TimeDimension
+This example shows how to integrate a third-party library that extends Leaflet when it is exposed as the "L" global variable.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## Usage
+Clone this repo and then go into each subdirectory for a self-contained @angular/cli project.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## License
+See LICENSE in repository for details.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Credits
+**[Leaflet](http://leafletjs.com/)** Is an awesome mapping package.

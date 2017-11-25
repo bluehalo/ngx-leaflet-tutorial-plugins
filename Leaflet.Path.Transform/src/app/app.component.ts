@@ -34,7 +34,7 @@ export class AppComponent {
 
   constructor() {
 
-    // The polygon has to be added to the map for enable to work
+    // The polygon has to already be added to the map for enable to work
     this.polygon.on('add', () => {
       this.polygon.transform.enable();
     });

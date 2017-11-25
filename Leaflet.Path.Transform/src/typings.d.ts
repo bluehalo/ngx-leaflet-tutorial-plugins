@@ -28,6 +28,12 @@ declare module 'leaflet' {
 
   interface Polygon {
     transform: PathTransform;
+    dragging: PathDrag;
+  }
+
+  interface PathDrag {
+    enable();
+    disable();
   }
 
   interface PathTransform {

@@ -11,13 +11,13 @@ import '../../node_modules/leaflet-timedimension/dist/leaflet.timedimension.src.
 export class AppComponent {
 
   options = {
-    zoom: 7,
-    center: L.latLng([ 45.3, 0.9 ]),
+    zoom: 4,
+    center: L.latLng([ 46.879966, -121.726909 ]),
     timeDimension: true,
     timeDimensionControl: true
   };
 
-  layerGrid = L.tileLayer.wms('https://ogcie.iblsoft.com/metocean/wms', {
+  baselayer = L.tileLayer.wms('https://ogcie.iblsoft.com/metocean/wms', {
     layers: 'foreground-lines',
     format: 'image/png',
     transparent: true,
@@ -35,12 +35,7 @@ export class AppComponent {
 
   tdWmsLayer = L.timeDimension.layer.wms(this.dataLayer);
   layers = [
-    L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-      maxZoom: 20,
-      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-      detectRetina: true
-    }),
-    this.layerGrid,
+    this.baselayer,
     this.tdWmsLayer
   ];
 

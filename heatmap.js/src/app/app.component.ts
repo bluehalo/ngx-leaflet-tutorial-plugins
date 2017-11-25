@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import * as L from 'leaflet';
-
+declare var L;
 declare var HeatmapOverlay;
 
 @Component({

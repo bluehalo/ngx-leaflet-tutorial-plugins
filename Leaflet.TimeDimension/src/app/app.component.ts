@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import * as L from 'leaflet';
-import '../../node_modules/iso8601-js-period/iso8601.js';
 import '../../node_modules/leaflet-timedimension/dist/leaflet.timedimension.src.js';
 
 @Component({
@@ -13,29 +12,35 @@ export class AppComponent {
 
   options = {
     zoom: 7,
-    center: L.latLng([ 38.705, 1.15 ]),
+    center: L.latLng([ 45.3, 0.9 ]),
     timeDimension: true,
-    timeDimensionOptions: {
-      timeInterval: "2014-09-30/2014-10-30",
-      period: "PT1H"
-    },
     timeDimensionControl: true
   };
 
-  wmsLayer = L.tileLayer.wms('http://thredds.socib.es/thredds/wms/observational/hf_radar/hf_radar_ibiza-scb_codarssproc001_aggregation/dep0001_hf-radar-ibiza_scb-codarssproc001_L1_agg.nc', {
-    layers: 'sea_water_velocity',
+  layerGrid = L.tileLayer.wms('https://ogcie.iblsoft.com/metocean/wms', {
+    layers: 'foreground-lines',
     format: 'image/png',
     transparent: true,
-    attribution: 'SOCIB HF RADAR | sea_water_velocity'
+    crs: L.CRS.EPSG4326
   });
 
-  tdWmsLayer = L.timeDimension.layer.wms(this.wmsLayer);
+  dataLayer = L.tileLayer.wms('https://ogcie.iblsoft.com/metocean/wms', {
+    layers: 'gfs-temperature-isbl',
+    format: 'image/png',
+    opacity: 0.3,
+    transparent: true,
+    crs: L.CRS.EPSG4326,
+    attribution: 'OGC MetOcean DWG Best Practice Example, IBL Software Engineering'
+  });
+
+  tdWmsLayer = L.timeDimension.layer.wms(this.dataLayer);
   layers = [
     L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       maxZoom: 20,
       subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
       detectRetina: true
     }),
+    this.layerGrid,
     this.tdWmsLayer
   ];
 

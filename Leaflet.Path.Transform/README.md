@@ -55,7 +55,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
            [leafletOptions]="options"
            [leafletLayers]="layers"></div>
    ```
-5. Component class. By importing leaflet into 'L', and then doing a typeless import of the actual umd packaged bundle file for leaflet-path-transform and leaflet-path-drag, we should end up with a scoped L variable that has been extended:
+5. Component class. By importing leaflet into 'L', and then importing the other two libraries, we should end up with a scoped L variable that has been extended:
    ```
    import { Component } from '@angular/core';
    

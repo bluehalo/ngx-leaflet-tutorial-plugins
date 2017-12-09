@@ -24,6 +24,8 @@ So, if there are obvious improvements that can be made, feel free to submit an i
 
 The following is a list of projects that demonstrate how to integrate specific 3rd party plugins with @asymmetrik/ngx-leaflet and @angular/cli. 
 
+### Leaflet.Coordinates
+Demonstrates how to use Leaflet.Coordinates with @asymmetrik/ngx-leaflet and @angular/cli.
 
 ### Leaflet.TimeDimension
 Demonstrates how to use Leaflet.TimeDimension with @asymmetrik/ngx-leaflet and @angular/cli.

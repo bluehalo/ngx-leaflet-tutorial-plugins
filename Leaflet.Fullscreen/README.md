@@ -40,7 +40,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    import { Component } from '@angular/core';
    import * as L from 'leaflet';
    
-   import '../../node_modules/leaflet.fullscreen/dist/leaflet.fullscreen.min.js';
+  import '../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
    
    @Component({
      selector: 'app-root',

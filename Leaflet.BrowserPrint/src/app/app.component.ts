@@ -23,12 +23,16 @@ export class AppComponent {
   };
 
   onMapReady(map: L.Map) {
-    L.control.browserPrint({ title: 'Imprimer la carte',
-                             printModesNames: { Portrait: 'Portrait',
-                                                Landscape: 'Paysage',
-                                                Auto: 'Auto',
-                                                Custom: 'Séléctionnez la zone'
-                             }
-                           }).addTo(map);
+    const control = new L.Control.BrowserPrint({
+      title: 'Imprimer la carte',
+      printModesNames: {
+        Portrait: 'Portrait',
+        Landscape: 'Paysage',
+        Auto: 'Auto',
+        Custom: 'Séléctionnez la zone'
+      }
+    });
+
+    control.addTo(map);
   }
 }

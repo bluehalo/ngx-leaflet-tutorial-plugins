@@ -27,6 +27,10 @@ The following is a list of projects that demonstrate how to integrate specific L
 Demonstrates how to use Leaflet.Coordinates with @asymmetrik/ngx-leaflet and @angular/cli.
 [Leaflet.Coordinates on GitHub](https://github.com/MrMufflon/Leaflet.Coordinates).
 
+### Leaflet.Fullscreen
+Demonstrates how to use Leaflet.fullscreen with @asymmetrik/ngx-leaflet and @angular/cli.
+[Leaflet.Fullscreen on GitHub](http://brunob.github.io/leaflet.fullscreen).
+
 ### Leaflet.Path.Transform
 Demonstrates how to use Leaflet.Path.Transform and Leaflet.Path.Drag with @asymmetrik/ngx-leaflet and @angular/cli.
 [Leaflet.Path.Transform on GitHub](https://github.com/w8r/Leaflet.Path.Transform).

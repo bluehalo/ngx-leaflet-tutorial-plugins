@@ -6,9 +6,11 @@ interface NodeModule {
 
 import * as L from 'leaflet';
 declare module 'leaflet' {
+  namespace control {
+    function browserPrint(options?: any): Control.BrowserPrint;
+  }
   namespace Control {
-    class BrowserPrint {
-      constructor(options?: any);
+    interface BrowserPrint {
       addTo(map: L.Map): any;
     }
   }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import * as L from 'leaflet';
 
-import '../../node_modules/leaflet.browser.print/dist/leaflet.browser.print.min.js';
+import '../../node_modules/leaflet.browser.print/dist/leaflet.browser.print.js';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent {
   };
 
   onMapReady(map: L.Map) {
-    const control = new L.Control.BrowserPrint({
+    L.control.browserPrint({
       title: 'Imprimer la carte',
       printModesNames: {
         Portrait: 'Portrait',
@@ -31,8 +31,6 @@ export class AppComponent {
         Auto: 'Auto',
         Custom: 'Séléctionnez la zone'
       }
-    });
-
-    control.addTo(map);
+    }).addTo(map);
   }
 }

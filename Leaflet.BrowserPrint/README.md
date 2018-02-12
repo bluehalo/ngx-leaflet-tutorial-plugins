@@ -22,9 +22,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    ```
    import * as L from 'leaflet';
    declare module 'leaflet' {
+     namespace control {
+       function browserPrint(options?: any): Control.BrowserPrint;
+     }
      namespace Control {
-       class BrowserPrint {
-         constructor(options?: any);
+       interface BrowserPrint {
          addTo(map: L.Map): any;
        }
      }
@@ -33,9 +35,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 5. Component template. Just adding a layers binding so we can add the timeDimension layer:
    ```
    <div class="map"
-           leaflet
-           [leafletOptions]="options"
-           (leafletMapReady)="onMapReady"></div>
+        leaflet
+        [leafletOptions]="options"
+        (leafletMapReady)="onMapReady"></div>
    ```
 6. Component class. By importing leaflet into 'L', and then doing a typeless import of the actual global bundle file for leaflet.browser.print, we should end up with a scoped L variable that has been extended by leaflet.browser.print:
    ```
@@ -64,18 +66,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
      };
    
      onMapReady(map: L.Map) {
-         const control = new L.Control.BrowserPrint({
-           title: 'Imprimer la carte',
-           printModesNames: {
-             Portrait: 'Portrait',
-             Landscape: 'Paysage',
-             Auto: 'Auto',
-             Custom: 'Séléctionnez la zone'
-           }
-         });
-     
-         control.addTo(map);
-       }
+       L.control.browserPrint({
+         title: 'Imprimer la carte',
+         printModesNames: {
+           Portrait: 'Portrait',
+           Landscape: 'Paysage',
+           Auto: 'Auto',
+           Custom: 'Séléctionnez la zone'
+         }
+       }).addTo(map);
+     }
    }
    ```
 

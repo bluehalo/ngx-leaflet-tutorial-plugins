@@ -23,13 +23,13 @@ So, if there are obvious improvements that can be made, feel free to submit an i
 
 The following is a list of projects that demonstrate how to integrate specific Leaflet plugins with @asymmetrik/ngx-leaflet and @angular/cli. 
 
-### Leaflet.BrowserPrint
-Demonstrates how to use leaflet.browser.print with @asymmetrik/ngx-leaflet and @angular/cli.
-[Leaflet.BrowserPrint on GitHub](https://github.com/Igor-Vladyka/leaflet.browser.print).
-
 ### Leaflet.Coordinates
 Demonstrates how to use Leaflet.Coordinates with @asymmetrik/ngx-leaflet and @angular/cli.
 [Leaflet.Coordinates on GitHub](https://github.com/MrMufflon/Leaflet.Coordinates).
+
+### Leaflet.Fullscreen
+Demonstrates how to use Leaflet.fullscreen with @asymmetrik/ngx-leaflet and @angular/cli.
+[Leaflet.Fullscreen on GitHub](http://brunob.github.io/leaflet.fullscreen).
 
 ### Leaflet.Path.Transform
 Demonstrates how to use Leaflet.Path.Transform and Leaflet.Path.Drag with @asymmetrik/ngx-leaflet and @angular/cli.

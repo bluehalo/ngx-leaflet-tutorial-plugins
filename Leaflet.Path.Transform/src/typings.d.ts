@@ -1,10 +1,3 @@
-/* SystemJS module definition */
-import {PolylineOptions} from "leaflet";
-declare var module: NodeModule;
-interface NodeModule {
-  id: string;
-}
-
 import * as geojson from 'geojson';
 import * as L from 'leaflet';
 declare module 'leaflet' {

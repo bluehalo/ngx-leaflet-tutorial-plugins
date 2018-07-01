@@ -1,24 +1,24 @@
 # Leaflet.BrowserPrint
 
 This project is a demonstration of using the leaflet.browser.print(https://github.com/Igor-Vladyka/leaflet.browser.print) library with @asymmetrik/ngx-leaflet and @angular/cli.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 
 ## Overview
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save leaflet.browser.print```
-3. Modify .angular-cli.json to add the stylesheet and global js scripts. 
+   ```yarn add leaflet.browser.print```
+3. Modify angular.json to add the stylesheet and global js scripts. 
    ```
    ...
       "styles": [
         "styles.css",
-        "../node_modules/leaflet/dist/leaflet.css"
+        "./node_modules/leaflet/dist/leaflet.css"
       ],
    ...
    ```
-4. Update typings.d.ts to open up leaflet.browser.print control to the leaflet module (this is a horrible type definition, but we're just trying to get this working):
+4. Add a ./src/typings.d.ts containing the following type definitions (this is a horrible type definition, but we're just trying to get this working):
    ```
    import * as L from 'leaflet';
    declare module 'leaflet' {

@@ -1,25 +1,25 @@
 # Leaflet.fullscreen
 
 This project is a demonstration of using the leaflet.fullscreen(https://github.com/brunob/leaflet.fullscreen) library with @asymmetrik/ngx-leaflet and @angular/cli.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 
 ## Overview
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save leaflet.fullscreen```
-3. Modify .angular-cli.json to add the stylesheet and global js scripts. 
+   ```yarn add leaflet.fullscreen```
+3. Modify angular.json to add the stylesheet and global js scripts. 
    ```
    ...
       "styles": [
         "styles.css",
-        "../node_modules/leaflet/dist/leaflet.css",
-        "../node_modules/leaflet.fullscreen/Control.FullScreen.css"
+        "./node_modules/leaflet/dist/leaflet.css",
+        "./node_modules/leaflet.fullscreen/Control.FullScreen.css"
       ],
    ...
    ```
-4. Update typings.d.ts to open up leaflet.fullscreen control to the leaflet module (this is a horrible type definition, but we're just trying to get this working):
+4. Add a ./src/typings.d.ts file containing the following type definitions (this is a horrible type definition, but we're just trying to get this working):
    ```
    import * as L from 'leaflet';
    declare module 'leaflet' {
@@ -40,7 +40,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    import { Component } from '@angular/core';
    import * as L from 'leaflet';
    
-  import '../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
+   import '../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
    
    @Component({
      selector: 'app-root',
@@ -71,6 +71,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
               forcePseudoFullscreen: true, // force use of pseudo full screen even if full screen API is available, default false
               fullscreenElement: false // Dom element to render in full screen, false by default, fallback to map._container
             }).addTo(map);
+            
+        map.on('enterFullscreen', () => map.invalidateSize());
+        map.on('exitFullscreen', () => map.invalidateSize());
      }
    }
    ```

@@ -8,18 +8,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save leaflet.fullscreen```
-3. Modify .angular-cli.json to add the stylesheet and global js scripts. 
+   ```yarn add leaflet.fullscreen```
+3. Modify angular.json to add the stylesheet and global js scripts. 
    ```
    ...
       "styles": [
         "styles.css",
-        "../node_modules/leaflet/dist/leaflet.css",
-        "../node_modules/leaflet.fullscreen/Control.FullScreen.css"
+        "./node_modules/leaflet/dist/leaflet.css",
+        "./node_modules/leaflet.fullscreen/Control.FullScreen.css"
       ],
    ...
    ```
-4. Update typings.d.ts to open up leaflet.fullscreen control to the leaflet module (this is a horrible type definition, but we're just trying to get this working):
+4. Add a ./src/typings.d.ts file containing the following type definitions (this is a horrible type definition, but we're just trying to get this working):
    ```
    import * as L from 'leaflet';
    declare module 'leaflet' {
@@ -71,15 +71,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
               forcePseudoFullscreen: true, // force use of pseudo full screen even if full screen API is available, default false
               fullscreenElement: false // Dom element to render in full screen, false by default, fallback to map._container
             }).addTo(map);
+            
+        map.on('enterFullscreen', () => map.invalidateSize());
+        map.on('exitFullscreen', () => map.invalidateSize());
      }
    }
    ```
 
 7. Run the example using ng serve and go to http://localhost:4200.
-
-## Known Issues
-There's a known issue with `--prod` mode. See: https://github.com/angular/angular-cli/issues/8577
-It should be fixed in the @angular/cli 1.7.x.
 
 
 ## @angular/cli Usage

@@ -8,8 +8,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save leaflet-path-transform leaflet-path-drag```
-3. Update typings.d.ts to specify Leaflet.Path.Transform and Leaflet.Path.Drag types:
+   ```yarn add leaflet-path-transform leaflet-path-drag```
+3. Add a ./src/typings.d.ts file containing the following type definitions:
    ```
    import * as geojson from 'geojson';
    import * as L from 'leaflet';

@@ -8,21 +8,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save leaflet-timedimension iso8601-js-period```
-3. Modify .angular-cli.json to add the stylesheet and global js scripts. At a minimum, we need iso8601-js-period to be global because it is used by the Leaflet.TimeDimension library. 
+   ```yarn add leaflet-timedimension iso8601-js-period```
+3. Modify angular.json to add the stylesheet and global js scripts. At a minimum, we need iso8601-js-period to be global because it is used by the Leaflet.TimeDimension library. 
    ```
    ...
       "styles": [
         "styles.css",
-        "../node_modules/leaflet/dist/leaflet.css",
-        "../node_modules/leaflet-timedimension/dist/leaflet.timedimension.control.css"
+        "./node_modules/leaflet/dist/leaflet.css",
+        "./node_modules/leaflet-timedimension/dist/leaflet.timedimension.control.css"
       ],
       "scripts": [
-        "../node_modules/iso8601-js-period/iso8601.js"
+        "./node_modules/iso8601-js-period/iso8601.js"
       ],
    ...
    ```
-4. Update typings.d.ts to open up leaflet.timedimension stuff to the leaflet module (this is a horrible type definition, but we're just trying to get this working):
+4. Add a ./src/typings.d.ts file with the following type definitions (this is a horrible type definition, but we're just trying to get this working):
    ```
    import * as L from 'leaflet';
    declare module 'leaflet' {
@@ -32,9 +32,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 5. Component template. Just adding a layers binding so we can add the timeDimension layer:
    ```
    <div class="map"
-           leaflet
-           [leafletOptions]="options"
-           [leafletLayers]="layers"></div>
+        leaflet
+        [leafletOptions]="options"
+        [leafletLayers]="layers"></div>
    ```
 6. Component class. By importing leaflet into 'L', and then doing a typeless import of the actual umd packaged bundle file for leaflet.timedimension, we should end up with a scoped L variable that has been extended by leaflet.timedimension:
    ```

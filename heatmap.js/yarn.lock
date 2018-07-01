@@ -175,9 +175,9 @@
   dependencies:
     tslib "^1.9.0"
 
-"@asymmetrik/ngx-leaflet@file:../../ngx-leaflet/asymmetrik-ngx-leaflet-4.0.0.tgz":
+"@asymmetrik/ngx-leaflet@^4.0.0":
   version "4.0.0"
-  resolved "file:../../ngx-leaflet/asymmetrik-ngx-leaflet-4.0.0.tgz#9c2c32f9b1e17f921e1d3dc0eedba83e37f2cd08"
+  resolved "https://registry.yarnpkg.com/@asymmetrik/ngx-leaflet/-/ngx-leaflet-4.0.0.tgz#9e8b991b13e433de8bf3d3163aea02e5e1658f1d"
 
 "@ngtools/webpack@6.0.8":
   version "6.0.8"

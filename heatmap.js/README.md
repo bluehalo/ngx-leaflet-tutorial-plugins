@@ -8,14 +8,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save heatmap.js leaflet-heatmap```
-3. Modify .angular-cli.json to add the global js scripts. We need all three since there are global dependencies between them.   
+   ```yarn add heatmap.js leaflet-heatmap```
+3. Modify angular.json to add the global js scripts. We need all three since there are global dependencies between them.   
    ```
    ...
    "scripts": [
-     "../node_modules/leaflet/dist/leaflet.js",
-     "../node_modules/heatmap.js/build/heatmap.js",
-      "../node_modules/leaflet-heatmap/leaflet-heatmap.js"
+     "./node_modules/leaflet/dist/leaflet.js",
+     "./node_modules/heatmap.js/build/heatmap.js",
+     "./node_modules/leaflet-heatmap/leaflet-heatmap.js"
    ],
    ...
    ```

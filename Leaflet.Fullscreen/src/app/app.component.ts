@@ -32,5 +32,9 @@ export class AppComponent {
       forcePseudoFullscreen: true,
       fullscreenElement: false
     }).addTo(map);
+
+    map.on('enterFullscreen', () => map.invalidateSize());
+    map.on('exitFullscreen', () => map.invalidateSize());
+
   }
 }

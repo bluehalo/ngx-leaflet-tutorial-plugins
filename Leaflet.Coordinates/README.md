@@ -8,18 +8,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Start with a working @angular/cli project that has ngx-leaflet set up and installed - [tutorial](https://www.asymmetrik.com/ngx-leaflet-tutorial-angular-cli/), [github](https://github.com/Asymmetrik/ngx-leaflet-tutorial-ngcli)
 2. Install the new dependencies
-   ```npm install --save leaflet.coordinates```
-3. Modify .angular-cli.json to add the stylesheet and global js scripts. 
+   ```yarn add leaflet.coordinates```
+3. Modify angular.json to add the stylesheet and global js scripts. 
    ```
    ...
       "styles": [
         "styles.css",
-        "../node_modules/leaflet/dist/leaflet.css",
-        "../node_modules/leaflet.coordinates/dist/Leaflet.Coordinates-0.1.5.css"
+        "./node_modules/leaflet/dist/leaflet.css",
+        "./node_modules/leaflet.coordinates/dist/Leaflet.Coordinates-0.1.5.css"
       ],
    ...
    ```
-4. Update typings.d.ts to open up leaflet.coordinates control to the leaflet module (this is a horrible type definition, but we're just trying to get this working):
+4. Add a ./src/typings.d.ts file containing the following type definitions (this is a horrible type definition, but we're just trying to get this working):
    ```
    import * as L from 'leaflet';
    declare module 'leaflet' {
@@ -68,6 +68,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    ```
 
 7. Run the example using ng serve and go to http://localhost:4200.
+
+
+## Known Issues
+Adding markers via the control won't work.
+If you can dig in and figure out a solution, put in a PR.
 
 
 ## @angular/cli Usage

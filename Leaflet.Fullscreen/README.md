@@ -1,7 +1,7 @@
 # Leaflet.fullscreen
 
 This project is a demonstration of using the leaflet.fullscreen(https://github.com/brunob/leaflet.fullscreen) library with @asymmetrik/ngx-leaflet and @angular/cli.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 
 ## Overview
@@ -40,7 +40,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    import { Component } from '@angular/core';
    import * as L from 'leaflet';
    
-  import '../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
+   import '../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
    
    @Component({
      selector: 'app-root',
@@ -76,6 +76,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    ```
 
 7. Run the example using ng serve and go to http://localhost:4200.
+
+## Known Issues
+There's a known issue with `--prod` mode. See: https://github.com/angular/angular-cli/issues/8577
+It should be fixed in the @angular/cli 1.7.x.
 
 
 ## @angular/cli Usage

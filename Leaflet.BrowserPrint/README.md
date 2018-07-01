@@ -1,7 +1,7 @@
 # Leaflet.BrowserPrint
 
 This project is a demonstration of using the leaflet.browser.print(https://github.com/Igor-Vladyka/leaflet.browser.print) library with @asymmetrik/ngx-leaflet and @angular/cli.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 
 ## Overview
